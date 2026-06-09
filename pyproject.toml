@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "sifa-mcp"
+version = "0.1.0"
+description = "MCP server for portable reputation and skills passports in East Africa"
+authors = [{name = "Gabriel Mahia", email = "contact@aikungfu.dev"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["mcp", "reputation", "kenya", "africa", "skills", "passport", "sifa", "workers"]
+dependencies = ["fastmcp>=2.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/gabrielmahia/sifa-mcp"
+
+[project.scripts]
+sifa-mcp = "sifa_mcp.main:main"
