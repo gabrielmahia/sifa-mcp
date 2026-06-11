@@ -1,4 +1,5 @@
 {
+  "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "sifa-mcp",
   "version": "0.1.0",
   "description": "MCP server for portable reputation and skills passports in East Africa. 6 tools.",
