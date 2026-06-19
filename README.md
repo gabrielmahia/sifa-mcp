@@ -1,5 +1,8 @@
 # ⭐ sifa-mcp — Portable Reputation & Skills Passport MCP Server
 
+[![sifa-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/sifa-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/sifa-mcp)
+
+
 *Sifa* = reputation/praise in Swahili.
 
 **First portable reputation MCP server for East Africa.**
