@@ -6,7 +6,7 @@
 
 *Sifa* = reputation/praise in Swahili.
 
-**First portable reputation MCP server for East Africa.**
+Informal-sector workers build reputation with one buyer, one platform, one neighborhood at a time — and lose it the moment they switch. Nothing makes that reputation portable or agent-queryable.
 
 ## The Structural Problem
 
