@@ -4,6 +4,14 @@
 [![smithery badge](https://smithery.ai/badge/@gabrielmahia/sifa-mcp)](https://smithery.ai/server/@gabrielmahia/sifa-mcp)
 
 
+---
+**Compatible with `claude-sonnet-5`** (released 2026-06-30) — Anthropic's most agentic
+Sonnet yet. Runs multi-step tool chains end-to-end without stopping short.
+Install: `pip install sifa-mcp` · Use with any MCP client.
+
+---
+
+
 *Sifa* = reputation/praise in Swahili.
 
 Informal-sector workers build reputation with one buyer, one platform, one neighborhood at a time — and lose it the moment they switch. Nothing makes that reputation portable or agent-queryable.
