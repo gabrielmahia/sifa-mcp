@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sifa-mcp"
-version = "0.1.2"
+version = "0.1.3"
 description = "MCP server for portable reputation and skills passports across Africa"
 authors = [{name = "Gabriel Mahia", email = "contact@aikungfu.dev"}]
 license = {text = "MIT"}
