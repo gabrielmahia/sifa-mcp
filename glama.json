@@ -1,8 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "sifa-mcp",
-  "version": "0.1.0",
-  "description": "MCP server for portable reputation and skills passports in East Africa. 6 tools.",
+  "version": "0.1.4",
+  "description": "MCP server for portable reputation and skills passports across Africa",
   "author": "Gabriel Mahia",
   "license": "MIT",
   "homepage": "https://github.com/gabrielmahia/sifa-mcp",
@@ -14,7 +14,32 @@
     "workers",
     "sifa"
   ],
-  "tools": 6,
+  "tools": [
+    {
+      "name": "create_worker_profile",
+      "description": "Create a portable worker reputation profile. Western parallel: LinkedIn profile creation, Angie's List contractor profile. This is the 'economic passport' that travels with the worker. DEMO — no real identity verification in this prototype."
+    },
+    {
+      "name": "add_service_record",
+      "description": "Add a completed service record to a worker's profile. Western parallel: Uber trip completion, Angie's List job review, Upwork completed contract. Each record builds the reputation score. DEMO — client verification is simulated."
+    },
+    {
+      "name": "get_reputation_profile",
+      "description": "Retrieve a worker's full reputation profile including trust score. Western parallel: Checking a contractor's BBB rating or Upwork JSS. DEMO data."
+    },
+    {
+      "name": "generate_reference",
+      "description": "Generate a structured professional reference letter for a worker. Western parallel: LinkedIn recommendation, employer reference letter. Outputs a formatted reference that can be printed, shared as PDF, or verified by QR code in production. DEMO."
+    },
+    {
+      "name": "list_skill_categories",
+      "description": "List all skill categories and subcategories available in the Sifa system. Use this to see valid skill values for create_worker_profile."
+    },
+    {
+      "name": "compare_workers",
+      "description": "Compare the reputation scores of multiple workers for a specific job. Western parallel: Contractor comparison on Thumbtack, Bark, or Houzz. DEMO data."
+    }
+  ],
   "category": "Human Resources",
   "transport": "stdio",
   "dockerfile": {
@@ -38,5 +63,8 @@
     "mcp",
     "useful-rails",
     "ai-agents"
+  ],
+  "maintainers": [
+    "gabrielmahia"
   ]
 }
