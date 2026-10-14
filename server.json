@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.gabrielmahia/sifa-mcp",
-  "description": "\u2b50 sifa-mcp \u2014 Portable Reputation & Skills Passport MCP Server",
+  "description": "⭐ sifa-mcp — Portable Reputation & Skills Passport MCP Server",
   "repository": {
     "url": "https://github.com/gabrielmahia/sifa-mcp",
     "source": "github"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "packages": [
     {
       "registryType": "pypi",
       "identifier": "sifa-mcp",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "transport": {
         "type": "stdio"
       }

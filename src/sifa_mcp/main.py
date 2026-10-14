@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # sifa-mcp — Portable Reputation & Skills Passport MCP Server
 # © 2026 Gabriel Mahia / AI Kung Fu LLC — MIT License
 #
@@ -20,11 +19,14 @@
 # =============================================================================
 
 from __future__ import annotations
-import json
+
 import datetime
 import hashlib
+import json
 from typing import Annotated
+
 from fastmcp import FastMCP
+from pydantic import Field
 
 mcp = FastMCP(
     name="sifa-mcp",
@@ -107,10 +109,7 @@ def _trust_score(profile: dict) -> dict:
 
 @mcp.tool(
     description=(
-        "Create a portable worker reputation profile. "
-        "Western parallel: LinkedIn profile creation, Angie's List contractor profile. "
-        "This is the 'economic passport' that travels with the worker. "
-        "DEMO — no real identity verification in this prototype."
+        "Create a DEMONSTRATION skills and reputation profile for an informal-sector worker, with a deterministic profile ID derived from the name and phone. Use when you want to show how portable reputation could work. Records the profile in memory only: it is lost when the server restarts, nothing is verified, and the phone is masked in the output. Do not enter real people's details. Returns status, the profile_id and a profile summary. Side effect: adds a profile to the in-memory store."
     ),
     annotations={"readOnlyHint": False, "destructiveHint": False},
 )
@@ -166,10 +165,7 @@ def create_worker_profile(
 
 @mcp.tool(
     description=(
-        "Add a completed service record to a worker's profile. "
-        "Western parallel: Uber trip completion, Angie's List job review, "
-        "Upwork completed contract. Each record builds the reputation score. "
-        "DEMO — client verification is simulated."
+        "Add a completed job to a worker's DEMONSTRATION profile: client, service type, duration, payment, a 1-5 rating and notes. Use when a job has been completed and you want to build the demo reputation. Records the entry in memory only; an unknown profile_id returns NOT_FOUND. Returns the updated record status and trust signals. Nothing is verified and nothing persists after a restart. Side effect: adds a service record to the in-memory profile."
     ),
     annotations={"readOnlyHint": False, "destructiveHint": False},
 )
@@ -223,9 +219,7 @@ def add_service_record(
 
 @mcp.tool(
     description=(
-        "Retrieve a worker's full reputation profile including trust score. "
-        "Western parallel: Checking a contractor's BBB rating or Upwork JSS. "
-        "DEMO data."
+        "Show a worker's DEMONSTRATION reputation: skills, service history summary and a synthetic trust score built from job volume, average rating, verified jobs and tenure. Use when asked how a worker's track record looks. An unknown profile_id returns NOT_FOUND. Returns status and the profile with the score. The score is a heuristic on synthetic data, not a real assessment of a person. Read-only."
     ),
     annotations={"readOnlyHint": True},
 )
@@ -274,10 +268,7 @@ def get_reputation_profile(
 
 @mcp.tool(
     description=(
-        "Generate a structured professional reference letter for a worker. "
-        "Western parallel: LinkedIn recommendation, employer reference letter. "
-        "Outputs a formatted reference that can be printed, shared as PDF, "
-        "or verified by QR code in production. DEMO."
+        "Generate a DEMONSTRATION reference statement for a worker from their in-memory profile, for a stated purpose. Use when a worker needs a sample reference. An unknown profile_id returns NOT_FOUND. Returns status and the reference text. Not a verified reference: nothing is checked and it should not be relied on for hiring or lending decisions. Read-only."
     ),
     annotations={"readOnlyHint": True},
 )
@@ -351,8 +342,7 @@ sifa-mcp · © 2026 Gabriel Mahia / AI Kung Fu LLC · MIT License
 
 @mcp.tool(
     description=(
-        "List all skill categories and subcategories available in the Sifa system. "
-        "Use this to see valid skill values for create_worker_profile."
+        "List the skill categories and example skills used for worker profiles (construction, domestic work, transport, and others). Use first, to choose valid values for a profile's primary skill. Takes no arguments. Returns status and the categories with their skills. Read-only."
     ),
     annotations={"readOnlyHint": True},
 )
@@ -368,9 +358,7 @@ def list_skill_categories() -> dict:
 
 @mcp.tool(
     description=(
-        "Compare the reputation scores of multiple workers for a specific job. "
-        "Western parallel: Contractor comparison on Thumbtack, Bark, or Houzz. "
-        "DEMO data."
+        "Rank DEMONSTRATION worker profiles by a synthetic trust score for a required skill. Use when choosing between several profiles for a job. profile_ids lists the profiles; unknown IDs are skipped and an empty ranking has no recommendation. Returns the required skill, the ranked workers, a recommendation or null and a note that the ranking rests on synthetic scores. Not a real assessment of any person. Read-only."
     ),
     annotations={"readOnlyHint": True},
 )

@@ -1,7 +1,7 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/1.0.0/server.json",
   "name": "sifa-mcp",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "MCP server for portable reputation and skills passports across Africa",
   "author": "Gabriel Mahia",
   "license": "MIT",
