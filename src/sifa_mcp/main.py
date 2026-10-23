@@ -23,10 +23,18 @@ from __future__ import annotations
 import datetime
 import hashlib
 import json
+from importlib.metadata import PackageNotFoundError
+from importlib.metadata import version as _pkg_version
 from typing import Annotated
 
 from fastmcp import FastMCP
 from pydantic import Field
+
+try:
+    _VERSION = _pkg_version("sifa-mcp")
+except PackageNotFoundError:  # a source tree that was never installed
+    _VERSION = "0+unknown"
+
 
 mcp = FastMCP(
     name="sifa-mcp",
@@ -38,7 +46,7 @@ mcp = FastMCP(
     IMPORTANT: All profiles are DEMO/synthetic. No real identity verification.
     A production deployment requires integration with Kenya's Huduma Number
     or NIIMS identity infrastructure.
-    """,
+    """, version=_VERSION,
 )
 
 # In-memory profile store (demo — production uses persistent DB)
