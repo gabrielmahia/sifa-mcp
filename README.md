@@ -2,12 +2,8 @@
 <!-- mcp-name: io.github.gabrielmahia/sifa-mcp -->
 
 [![sifa-mcp Glama score](https://glama.ai/mcp/servers/gabrielmahia/sifa-mcp/badges/score.svg)](https://glama.ai/mcp/servers/gabrielmahia/sifa-mcp)
-[![smithery badge](https://smithery.ai/badge/@gabrielmahia/sifa-mcp)](https://smithery.ai/server/@gabrielmahia/sifa-mcp)
-
 
 Install: `pip install sifa-mcp` · Use with any MCP client.
-
-
 
 *Sifa* = reputation/praise in Swahili.
 
