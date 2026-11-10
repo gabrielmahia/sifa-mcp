@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "sifa-mcp"
 abstract: "MCP server for portable reputation and skills passports across Africa"
-version: "0.1.10"
+version: "0.1.11"
 authors:
   - family-names: "Mahia"
     given-names: "Gabriel"
